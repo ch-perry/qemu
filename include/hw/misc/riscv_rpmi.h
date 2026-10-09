@@ -23,6 +23,7 @@ enum rpmi_servicegroup_id {
     RPMI_SRVGRP_SYSTEM_RESET = 0x0003,
     RPMI_SRVGRP_SYSTEM_SUSPEND = 0x0004,
     RPMI_SRVGRP_HSM = 0x0005,
+    RPMI_SRVGRP_CLOCK = 0x0008,
 };
 #endif
 
@@ -98,6 +99,9 @@ struct RiscvRpmiState {
     bool syssusp_resume_pending;
     uint32_t syssusp_resume_hart_index;
     uint64_t syssusp_resume_addr;
+    struct rpmi_service_group *clock_group;
+    uint32_t *clock_states;
+    uint64_t *clock_rates;
     uint32_t *hart_ids;
     uint32_t hart_count;
     const RiscvRpmiServiceConfig *services;

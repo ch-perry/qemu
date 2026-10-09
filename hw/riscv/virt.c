@@ -1019,6 +1019,13 @@ static const RiscvRpmiServiceConfig virt_rpmi_services[] = {
         .compatible = "riscv,rpmi-system-suspend",
         .service_group = RPMI_SRVGRP_SYSTEM_SUSPEND,
     },
+    {
+        .node_name = "clock",
+        .compatible = "riscv,rpmi-mpxy-clock",
+        .service_group = RPMI_SRVGRP_CLOCK,
+        .has_mpxy_channel = true,
+        .mpxy_channel = 0x1000,
+    },
 };
 
 static uint32_t virt_rpmi_service_count(RISCVVirtState *s)

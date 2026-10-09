@@ -219,6 +219,10 @@ static const RiscvRpmiServiceOps riscv_rpmi_service_ops[] = {
         .service_group = RPMI_SRVGRP_SYSTEM_SUSPEND,
         .add = riscv_rpmi_syssusp_add,
         .remove = riscv_rpmi_syssusp_remove,
+    }, {
+        .service_group = RPMI_SRVGRP_CLOCK,
+        .add = riscv_rpmi_clock_add,
+        .remove = riscv_rpmi_clock_remove,
     },
 };
 

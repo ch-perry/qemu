@@ -39,5 +39,8 @@ void riscv_rpmi_hsm_resume(RiscvRpmiState *s, uint32_t hart_index,
 bool riscv_rpmi_syssusp_add(RiscvRpmiState *s, Error **errp);
 void riscv_rpmi_syssusp_remove(RiscvRpmiState *s);
 
+bool riscv_rpmi_clock_add(RiscvRpmiState *s, Error **errp);
+void riscv_rpmi_clock_remove(RiscvRpmiState *s);
+
 
 #endif
